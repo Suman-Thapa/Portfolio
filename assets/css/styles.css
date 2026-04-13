@@ -508,6 +508,7 @@ img {
 
 .card-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
@@ -521,20 +522,27 @@ img {
     font-size: 12px;
 }
 
-.skills-card ul {
+/* .skills-card ul {
     list-style: none;
     padding: 0;
-}
+} */
 
 .skills-card ul li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 12px;
+    margin: 12px 0;
+    font-weight: 500;
+    transition: 0.3s;
     color: #333;
     transition: 0.3s;
 }
 
+.skills-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 🔥 space between HTML, CSS, JS */
+}
 .skills-card ul li i {
     font-size: 20px;
     color: #3b82f6;
@@ -543,4 +551,33 @@ img {
 .skills-card ul li:hover {
     transform: translateX(5px);
     color: #000;
+}
+
+.skills-card ul li img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    min-width: 40px;
+}
+
+
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* space between image and text */
+}
+
+.title img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+.card-header span {
+    border: 1px solid #3b82f6;
+    color: #3b82f6;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
 }
