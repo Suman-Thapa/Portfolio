@@ -776,3 +776,231 @@ img {
 
 
 
+.contact {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0a192f, #0f172a);
+  color: #fff;
+}
+
+.contact h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact h1 span {
+  color: #4f8cff;
+}
+
+.contact p {
+  color: #aaa;
+  margin-bottom: 50px;
+}
+
+/* grid */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* card */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* icon */
+.card i {
+  color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+/* text */
+.card h3 {
+  margin: 0;
+}
+
+.card p {
+  margin: 5px 0 0;
+  color: #6fa8ff;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #4f8cff;
+  box-shadow: 0 10px 30px rgba(79,140,255,0.3);
+}
+
+/* icon hover */
+.card:hover i {
+  transform: rotate(8deg) scale(1.1);
+}
+
+
+.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.card i.bxl-facebook {
+  background: linear-gradient(135deg, #1877f2, #3b5998);
+}
+
+
+/* GitHub */
+.card i.bxl-github {
+  background: #181717;
+}
+
+/* LinkedIn */
+.card i.bxl-linkedin {
+  background: linear-gradient(135deg, #0a66c2, #004182);
+}
+
+/* Instagram */
+.card i.bxl-instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+/* YouTube */
+.card i.bxl-youtube {
+  background: #ff0000;
+}
+
+/* Email */
+.card i.bx-envelope {
+  background: linear-gradient(135deg, #00c853, #009624);
+}
+
+/* Facebook */
+.card i.bxl-facebook {
+  background: linear-gradient(135deg, #1877f2, #3b5998);
+}
+
+
+.card i.bx-map {
+  background: linear-gradient(135deg, #34a853, #4285f4, #fbbc05, #ea4335);
+}
+
+
+
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+body.dark {
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+body.dark .l-header,
+body.dark .nav {
+  background: #111827;
+}
+
+/* SKILLS CARD */
+body.dark .skills-card {
+  background: #1f2937;
+  color: white;
+}
+
+/* PROJECT CARD */
+body.dark .project-card {
+  background: #1f2937;
+  color: white;
+}
+
+
+/* NAV LINKS */
+body.dark .nav__link {
+  color: white;
+}
+
+/* SKILL LIST TEXT */
+body.dark .skills-card ul li {
+  color: white;
+}
+
+/* PROJECT DESCRIPTION */
+body.dark .project-desc {
+  color: white;
+}
+
+body.dark .nav__logo {
+  color: white;
+}
+
+
+/* Theme button */
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 10px;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* dark mode icon color */
+body.dark .theme-btn {
+  color: white;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+
+
+
+
+/* light mode default */
+.nav__toggle i {
+  color: #111;
+  font-size: 24px;
+}
+
+/* dark mode */
+body.dark .nav__toggle i {
+  color: white;
+}
+
+/* theme button */
+.theme-btn {
+  color: #111;
+}
+
+body.dark .theme-btn {
+  color: white;
+}

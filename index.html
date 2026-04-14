@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="assets/css/styles.css?v=202638938938">
+        <link rel="stylesheet" href="assets/css/styles.css?v=2026389389383">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <!-- =====BOX ICONS===== -->
@@ -27,6 +27,9 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#project" class="nav__link">Project</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <button id="themeToggle" class="theme-btn">
+                        <i class='bx bx-moon' id="themeIcon"></i>
+                        </button>                  
                     </ul>
                 </div>
 
@@ -40,9 +43,9 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Suman</span><br> Developer</h1>
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Suman Thapa</span><br>   <span id="typing"></span> </h1>
 
-                    <a href="#" class="button">Contact</a>
+                    <a href="#contact" class="button" >Contact</a>
                 </div>
 
                 <div class="home__social">
@@ -189,10 +192,12 @@
             </p>
 
             <div class="tech">
-                <span>Laravel</span>
-                <span>PHP</span>
-                <span>Tailwind</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Java Script</span>
                 <span>MySQL</span>
+                <span>PHP</span>
+                <span>AJAX</span>
             </div>
 
             <div class="bottom-line"></div>
@@ -201,73 +206,71 @@
 
 
     <div class="project-card" data-link="project/event-management.html">
-        <div class="img-box">
-            <img src="assets/img/project/event_management/7.png" class="project-img">
+                <div class="img-box">
+                    <img src="assets/img/project/event_management/7.png" class="project-img">
 
-                <!-- Overlay -->
-                <div class="overlay">
-                    <a href="https://github.com/SthaKing10/Event-Management.git" class="icon github" onclick="event.stopPropagation()">
-                        <i class="bx bxl-github"></i>
-                    </a>
-                    <a href="http://bookhotelbysuman.gamer.gd" class="icon link" onclick="event.stopPropagation()">
-                        <i class="bx bx-link"></i>
-                    </a>
+                        <!-- Overlay -->
+                        <div class="overlay">
+                            <a href="https://github.com/SthaKing10/Event-Management.git" class="icon github" onclick="event.stopPropagation()">
+                                <i class="bx bxl-github"></i>
+                            </a>
+                            <a href="http://bookhotelbysuman.gamer.gd" class="icon link" onclick="event.stopPropagation()">
+                                <i class="bx bx-link"></i>
+                            </a>
+                        </div>
+                </div>               
+
+            <h3 class="project-title">Event Management System</h3>
+
+            <p class="project-desc">
+                Stock management system with real-time data and portfolio tracking.
+            </p>
+
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Java Script</span>
+                    <span>MySQL</span>
+                    <span>PHP</span>
+
                 </div>
-        </div>               
-
-      <h3 class="project-title">Event Management System</h3>
-
-      <p class="project-desc">
-        Stock management system with real-time data and portfolio tracking.
-      </p>
-
-      <div class="tech">
-        <span>Laravel</span>
-        <span>PHP</span>
-        <span>Tailwind</span>
-        <span>MySQL</span>
-      </div>
-            <div class="bottom-line"></div>
+                    <div class="bottom-line"></div>
 
     </div>
 
 
+    <div class="project-card" data-link="project/file-management.html">
+
+            <div class="img-box">
+                <!-- Overlay -->
+                    <div class="overlay">
+                        <a href="https://github.com/SthaKing10/Event-Management.git" class="icon github" onclick="event.stopPropagation()">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="http://bookhotelbysuman.gamer.gd" class="icon link" onclick="event.stopPropagation()">
+                            <i class="bx bx-link"></i>
+                        </a>
+                    </div>
+
+                <img src="assets/img/project/file_sharing/2.png" class="project-img">
+
+            </div>
 
 
+        
 
+        <h3 class="project-title">File Sharing System</h3>
 
-    <div class="project-card">
+        <p class="project-desc">
+            Stock management system with real-time data and portfolio tracking.
+        </p>
 
-        <div class="img-box">
-            <!-- Overlay -->
-                <div class="overlay">
-                    <a href="https://github.com/SthaKing10/Event-Management.git" class="icon github" onclick="event.stopPropagation()">
-                        <i class="bx bxl-github"></i>
-                    </a>
-                    <a href="http://bookhotelbysuman.gamer.gd" class="icon link" onclick="event.stopPropagation()">
-                        <i class="bx bx-link"></i>
-                    </a>
-                </div>
-
-            <img src="assets/img/project/file_sharing/2.png" class="project-img">
-
+        <div class="tech">
+            <span>Laravel</span>
+            <span>PHP</span>
+            <span>Tailwind</span>
+            <span>MySQL</span>
         </div>
-
-
-      
-
-      <h3 class="project-title">File Sharing System</h3>
-
-      <p class="project-desc">
-        Stock management system with real-time data and portfolio tracking.
-      </p>
-
-      <div class="tech">
-        <span>Laravel</span>
-        <span>PHP</span>
-        <span>Tailwind</span>
-        <span>MySQL</span>
-      </div>
             <div class="bottom-line"></div>
     </div>
 
@@ -277,7 +280,6 @@
 
     <!-- copy same card 2 more times -->
 
-  </div>
 </section>
 
             <!-- ===== WORK =====
@@ -309,28 +311,76 @@
             
 
             <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+            <section class="contact" id="contact">
+                <h2 class="section-title">Contact </h2>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
+                <h1>Get In <span>Touch</span></h1>
+                <p>Let's connect! Feel free to reach out through any of these channels</p>
+
+                <div class="contact-container">
+
+                <a href="https://github.com/Suman-Thapa" target="_blank" class="card">
+                <i class='bx bxl-github'></i>
+                <div>
+                    <h3>Github</h3>
+                    <p>@Suman-Thapa</p>
+                </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/suman-thapa-9424b9308/" target="_blank" class="card">
+                <i class='bx bxl-linkedin'></i>
+                <div>
+                    <h3>LinkedIn</h3>
+                    <p>Suman Thapa</p>
+                </div>
+                </a>
+
+                <a href="https://www.instagram.com/suman_thapa069/" target="_blank" class="card">
+                <i class='bx bxl-instagram'></i>
+                <div>
+                    <h3>Instagram</h3>
+                    <p>@suman_thapa069</p>
+                </div>
+                </a>
+
+                <!-- <a href="https://youtube.com/" target="_blank" class="card">
+                <i class='bx bxl-youtube'></i>
+                <div>
+                    <h3>YouTube</h3>
+                    <p>@SumaniqueCode</p>
+                </div>
+                </a> -->
+
+                <a href="mailto:sumanthapa302702@gmail.com" class="card">
+                <i class='bx bx-envelope'></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>sumanthapa302702@gmail.com</p>
+                </div>
+                </a>
+
+
+                <a href="https://www.facebook.com/gorkhali.don.9849" target="_blank" class="card">
+                    <i class='bx bxl-facebook'></i>
+                    <div>
+                        <h3>Facebook</h3>
+                        <p>सुमन क्षेत्री </p>
+                    </div>
+                </a>
+
+                <a href="https://maps.app.goo.gl/6WHjfSmStiEE44Ce9" target="_blank" class="card">
+                <i class='bx bx-map'></i>
+                <div>
+                    <h3>Location</h3>
+                    <p>Kathmandu, Nepal</p>
+                </div>
+                </a>
+
                 </div>
             </section>
-        </main>
-
-        <!--===== FOOTER =====-->
         <footer class="footer">
             <p class="footer__title">Suman</p>
-            <div class="footer__social">
-                <a href="https://www.facebook.com/gorkhali.don.9849" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://www.instagram.com/suman_thapa069/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="https://www.linkedin.com/in/suman-thapa-9424b9308/" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
-            </div>
+            
             <p class="footer__copy">&#169; Suman. All rigths reserved</p>
         </footer>
 

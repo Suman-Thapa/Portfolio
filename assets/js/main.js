@@ -64,3 +64,69 @@ document.querySelectorAll(".project-card").forEach(card => {
     window.location.href = link;
   });
 });
+
+
+const texts = [
+  "Frontend Developer",
+  "Web Designer",
+  "PHP Developer",
+  "UI/UX Designer"
+];
+
+let i = 0;
+let j = 0;
+let isDeleting = false;
+
+function type() {
+  const currentText = texts[i];
+
+  // typing / deleting
+  if (isDeleting) {
+    j--;
+  } else {
+    j++;
+  }
+
+  document.getElementById("typing").innerText = currentText.substring(0, j);
+
+  // pause when full word typed
+  if (!isDeleting && j === currentText.length) {
+    isDeleting = true;
+    setTimeout(type, 1500); // longer pause
+    return;
+  }
+
+  // move to next word
+  if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % texts.length;
+    setTimeout(type, 400); // small delay before next word
+    return;
+  }
+
+  // smoother speed
+  const speed = isDeleting ? 70 : 130;
+  setTimeout(type, speed);
+}
+
+type();
+
+
+
+
+// for day and ligth view
+
+const toggle = document.getElementById("themeToggle");
+const icon = document.getElementById("themeIcon");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    icon.classList.remove("bx-moon");
+    icon.classList.add("bx-sun");
+  } else {
+    icon.classList.remove("bx-sun");
+    icon.classList.add("bx-moon");
+  }
+});
