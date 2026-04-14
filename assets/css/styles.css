@@ -609,3 +609,170 @@ img {
     transform: translateY(0);
   }
 }
+
+
+
+/* Section */
+.projects {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Title */
+.section-title {
+  font-size: 28px;
+  color: #2563eb; /* blue */
+  margin-bottom: 30px;
+}
+
+/* Container */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.project-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Title */
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Description */
+.project-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Tech tags */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech span {
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Image wrapper */
+/* wrapper */
+.img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* image (NO zoom now) */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(245, 245, 245, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* icons */
+.icon {
+  background: rgb(39, 36, 36);
+  color: #2563eb;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  transform: scale(0.7);
+  transition: 0.3s;
+}
+
+/* icon hover zoom */
+.icon:hover {
+  transform: scale(1.2);
+  background: #2563eb;
+  color: white;
+}
+
+/* show overlay */
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* animate icons when card hover */
+.project-card:hover .icon {
+  transform: scale(1);
+}
+
+/* bottom line (keep same) */
+.bottom-line {
+  height: 3px;
+  width: 0%;
+  background: #2563eb;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.project-card:hover .bottom-line {
+  width: 100%;
+}
+
+/* cursor */
+.project-card {
+  cursor: pointer;
+}
+
+
+

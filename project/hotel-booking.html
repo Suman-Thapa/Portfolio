@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="style/style.css">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <title>Hotel Booking Project</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="l-header">
+  <nav class="nav bd-grid">
+    <div><a href="../index.html" class="nav__logo">Home</a></div>
+
+    <ul class="nav__list">
+      <li class="nav__item"><a href="../index.html#home" class="nav__link">Home</a></li>
+      <li class="nav__item"><a href="../index.html#about" class="nav__link">About</a></li>
+      <li class="nav__item"><a href="../index.html#skills" class="nav__link">Skills</a></li>
+      <li class="nav__item"><a href="../index.html#work" class="nav__link">Work</a></li>
+      <li class="nav__item"><a href="../index.html#contact" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- PROJECT -->
+<section class="project-detail">
+
+  <div class="detail-container">
+
+    <!-- LEFT -->
+    <div class="left">
+
+      <div class="slider">
+            <span class="arrow left-arrow" onclick="prevSlide()">❮</span>
+
+            <img id="mainImage" class="main-img" onclick="openPreview()">
+
+            <span class="arrow right-arrow" onclick="nextSlide()">❯</span>
+    </div>
+
+    <!-- Thumbnails (auto generated) -->
+    <div class="thumbs"></div>
+        <div id="preview" class="preview" onclick="outsideClick(event)">
+            <span class="close" onclick="closePreview()">✖</span>
+            <img id="previewImg">
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <h1 class="title">Hotel Booking System</h1>
+
+      <p class="desc">
+        A full-featured hotel booking system with real-time availability,
+        booking management, and secure user system.
+      </p>
+
+      <div class="tech">
+        <h3>Technologies</h3>
+        <div class="tags">
+          <span>Laravel</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>Tailwind</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="#" class="btn github"><i class="bx bxl-github"></i> Source Code</a>
+        <a href="#" class="btn live"><i class="bx bx-link"></i> Live Demo</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</body>
+</html>
+
+
+
+<script src="js/script.js"></script>
+
+<script>
+    initSlider([
+        "../assets/img/project/hotel_booking/0.png",
+        "../assets/img/project/hotel_booking/1.png",
+        "../assets/img/project/hotel_booking/2.png",
+        "../assets/img/project/hotel_booking/3.png"
+    ]);
+</script>
