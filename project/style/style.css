@@ -10,6 +10,8 @@
   padding: 60px 50px;
 }
 
+
+
 /* slider */
 .slider {
   position: relative;
@@ -45,6 +47,13 @@
   gap: 10px;
   margin-top: 12px;
   overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .thumbs img {
@@ -78,6 +87,12 @@
   z-index: 9999;   /* ⭐ ADD THIS */
 }
 
+
+.preview.active {
+  display: flex;
+  pointer-events: auto;
+}
+
 .preview img {
   max-width: 90%;
   max-height: 90%;
@@ -95,24 +110,26 @@
   line-height: 1.6;
 }
 
-/* tech */
-.tags {
+.tech{
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.tags span {
-  background: #dbeafe;
+
+.tech-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-title i {
+  font-size: 24px;
   color: #2563eb;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 12px;
 }
 
 /* buttons */
 .buttons {
-  margin-top: 25px;
+  margin-top: 50px;
   display: flex;
   gap: 15px;
 }
@@ -151,4 +168,46 @@
   color: white;   /* change to pure white */
   cursor: pointer;
   z-index: 10000; /* above everything */
+}
+
+
+.key-feature {
+  margin-top: 30px;
+  padding: 20px 25px;
+  background: #f0f7ff; /* light blue */
+  border-radius: 12px;
+  border: 1px solid #dbeafe;
+}
+
+.key-feature h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  color: #1e3a8a; /* dark blue */
+}
+
+.key-feature h2 i {
+  color: #2563eb; /* blue icon */
+  font-size: 24px;
+}
+
+.key-feature ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.key-feature li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #334155;
+  font-size: 15px;
+}
+
+.key-feature li i {
+  color: #2563eb; /* blue tick */
+  font-size: 18px;
 }

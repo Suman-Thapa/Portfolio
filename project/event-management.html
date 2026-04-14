@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="../assets/css/styles.css?v=398398398">
   <link rel="stylesheet" href="style/style.css?v=3983983">
 
+
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-  <title>Hotel Booking Project</title>
+  <title>Event Management System</title>
 </head>
 
 <body>
@@ -17,15 +18,20 @@
 <!-- HEADER -->
 <header class="l-header">
   <nav class="nav bd-grid">
-    <div><a href="../index.html" class="nav__logo">Home</a></div>
-
+    <div><a href="../index.html" class="nav__logo">Suman</a></div>
+    <div class="nav__menu" id="nav-menu">
     <ul class="nav__list">
       <li class="nav__item"><a href="../index.html#home" class="nav__link">Home</a></li>
       <li class="nav__item"><a href="../index.html#about" class="nav__link">About</a></li>
       <li class="nav__item"><a href="../index.html#skills" class="nav__link">Skills</a></li>
-      <li class="nav__item"><a href="../index.html#work" class="nav__link">Work</a></li>
+      <li class="nav__item"><a href="../index.html#project" class="nav__link">Project</a></li>
       <li class="nav__item"><a href="../index.html#contact" class="nav__link">Contact</a></li>
     </ul>
+    </div>
+    <div class="nav__toggle" id="nav-toggle">
+          <i class='bx bx-menu'></i>
+    </div>
+
   </nav>
 </header>
 
@@ -37,45 +43,60 @@
     <!-- LEFT -->
     <div class="left">
 
-      <div class="slider">
-            <span class="arrow left-arrow" onclick="prevSlide()">❮</span>
+        <div class="slider">
+              <span class="arrow left-arrow" onclick="prevSlide()">❮</span>
 
-            <img id="mainImage" class="main-img" onclick="openPreview()">
+              <img id="mainImage" class="main-img" onclick="openPreview()">
 
-            <span class="arrow right-arrow" onclick="nextSlide()">❯</span>
-    </div>
-
-    <!-- Thumbnails (auto generated) -->
-    <div class="thumbs"></div>
-        <div id="preview" class="preview" onclick="outsideClick(event)">
-            <span class="close" onclick="closePreview()">✖</span>
-            <img id="previewImg">
+              <span class="arrow right-arrow" onclick="nextSlide()">❯</span>
         </div>
+
+        <!-- Thumbnails (auto generated) -->
+        <div class="thumbs"></div>
+        <div id="preview" class="preview" onclick="outsideClick(event)">
+          <span class="close" onclick="closePreview(); event.stopPropagation();">✖</span>          <img id="previewImg">
+        </div>
+
+          <div class="key-feature">
+          <h2><i class='bx bx-check-circle'></i> Key Features</h2>
+
+          <ul>
+            <li><i class='bx bx-check'></i> User authentication system</li>
+            <li><i class='bx bx-check'></i> Real-time booking</li>
+            <li><i class='bx bx-check'></i> Admin dashboard</li>
+          </ul>
+        </div>
+
     </div>
 
     <!-- RIGHT -->
     <div class="right">
 
-      <h1 class="title">Hotel Booking System</h1>
+      <h1 class="title">Event Management System</h1>
 
       <p class="desc">
-        A full-featured hotel booking system with real-time availability,
+        A full-featured Event Management System with real-time availability,
         booking management, and secure user system.
       </p>
 
       <div class="tech">
-        <h3>Technologies</h3>
-        <div class="tags">
-          <span>Laravel</span>
-          <span>PHP</span>
-          <span>MySQL</span>
-          <span>Tailwind</span>
+          <div class="tech-title">
+            <i class='bx bx-code-alt'></i>
+            <h3>Technologies</h3>
+          </div>
+
+          <div class="tags">
+            <span>Html</span>
+            <span>Css</span>
+            <span>Java Script</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+          </div>
         </div>
-      </div>
 
       <div class="buttons">
-        <a href="#" class="btn github"><i class="bx bxl-github"></i> Source Code</a>
-        <a href="#" class="btn live"><i class="bx bx-link"></i> Live Demo</a>
+        <a href="https://github.com/SthaKing10/Event-Management.git" class="btn github" target="_blank"><i class="bx bxl-github"></i> Source Code</a>
+        <a href="https://github.com/SthaKing10/Event-Management.git" class="btn live" target="_blank" ><i class="bx bx-link" ></i> Live Demo</a>
       </div>
 
     </div>
@@ -91,6 +112,7 @@
 
 
 <script src="js/script.js"></script>
+<script src="../assets/js/main.js"></script>
 
 <script>
     initSlider([

@@ -11,7 +11,7 @@ function initSlider(imgArray) {
   loadThumbs();
   showSlide(0);
 
-  interval = setInterval(nextSlide, 3000);
+  startAutoSlide();
 }
 
 function loadThumbs() {
@@ -37,46 +37,48 @@ function showSlide(i) {
   }
 }
 
-// ⭐ RESET AUTO SLIDE
-function resetAutoSlide() {
-  clearInterval(interval);
-  interval = setInterval(nextSlide, 3000);
-}
-
 function nextSlide() {
   current = (current + 1) % images.length;
   showSlide(current);
-  resetAutoSlide();
+  restartAutoSlide();
 }
 
 function prevSlide() {
   current = (current - 1 + images.length) % images.length;
   showSlide(current);
-  resetAutoSlide();
+  restartAutoSlide();
 }
 
 function setSlide(i) {
   showSlide(i);
-  resetAutoSlide();
+  restartAutoSlide();
+}
+
+// AUTO SLIDE CONTROL
+function startAutoSlide() {
+  interval = setInterval(nextSlide, 3000);
+}
+
+function restartAutoSlide() {
+  clearInterval(interval);
+  startAutoSlide();
 }
 
 // PREVIEW
 function openPreview() {
   document.getElementById("preview").style.display = "flex";
   document.getElementById("previewImg").src = images[current];
-
   clearInterval(interval);
 }
 
 function closePreview() {
   document.getElementById("preview").style.display = "none";
-
-  interval = setInterval(nextSlide, 3000);
+  startAutoSlide();
 }
 
 // click outside
 function outsideClick(e) {
-  if (e.target.id === "preview") {
+  if (e.target.classList.contains("preview")) {
     closePreview();
   }
 }
