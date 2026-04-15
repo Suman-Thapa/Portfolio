@@ -343,12 +343,16 @@ img {
 }
 
 /* ===== FOOTER =====*/
+/* LIGHT MODE */
 .footer {
-  background-color: var(--second-color);
-  color: #fff;
+  background: #f8fafc;
+  color: #111;
   text-align: center;
-  font-weight: var(--font-semi);
   padding: 2rem 0;
+}
+
+.footer__copy {
+  color: #555;
 }
 .footer__title {
   font-size: 2rem;
@@ -365,6 +369,19 @@ img {
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
+
+
+/* DARK MODE */
+body.dark .footer {
+  background-color: var(--second-color);
+  color: #fff;
+}
+
+body.dark .footer__copy {
+  color: #ccc;
+}
+
+
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {

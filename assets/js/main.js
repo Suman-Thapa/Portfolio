@@ -1,70 +1,85 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+/* ===== MENU TOGGLE ===== */
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const toggleIcon = navToggle.querySelector('i');
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
-}
-showMenu('nav-toggle','nav-menu')
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
-
-const scrollActive = () =>{
-    const scrollDown = window.scrollY
-
-  sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-        
-        if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-            sectionsClass.classList.add('active-link')
-        }else{
-            sectionsClass.classList.remove('active-link')
-        }                                                    
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-//     reset: true
+  if (navMenu.classList.contains('show')) {
+    toggleIcon.classList.replace('bx-menu', 'bx-x');
+  } else {
+    toggleIcon.classList.replace('bx-x', 'bx-menu');
+  }
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+/* ===== CLOSE MENU ON LINK CLICK / OUTSIDE CLICK ===== */
+const navLink = document.querySelectorAll('.nav__link');
 
+function linkAction() {
+  navMenu.classList.remove('show');
+  toggleIcon.classList.replace('bx-x', 'bx-menu');
+}
 
+document.addEventListener('click', (e) => {
+  if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+    navMenu.classList.remove('show');
+    toggleIcon.classList.replace('bx-x', 'bx-menu');
+  }
+});
 
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
+/* ===== ACTIVE LINK ON SCROLL ===== */
+const sections = document.querySelectorAll('section[id]');
+
+function scrollActive() {
+  const scrollDown = window.scrollY;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 58;
+    const sectionId = current.getAttribute('id');
+
+    const navItem = document.querySelector(
+      '.nav__menu a[href*=' + sectionId + ']'
+    );
+
+    if (!navItem) return;
+
+    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+      navItem.classList.add('active-link');
+    } else {
+      navItem.classList.remove('active-link');
+    }
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
+
+/* ===== SCROLL REVEAL ===== */
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2000,
+  delay: 200
+});
+
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+
+/* ===== PROJECT CARD CLICK ===== */
 document.querySelectorAll(".project-card").forEach(card => {
   card.addEventListener("click", () => {
     const link = card.getAttribute("data-link");
-    window.location.href = link;
+    if (link) window.location.href = link;
   });
 });
 
+/* ===== TYPING ANIMATION (FIXED) ===== */
+const typingEl = document.getElementById("typing");
 
 const texts = [
   "Frontend Developer",
@@ -78,50 +93,59 @@ let j = 0;
 let isDeleting = false;
 
 function type() {
+  if (!typingEl) return;
+
   const currentText = texts[i];
 
-  // typing / deleting
   if (isDeleting) {
     j--;
   } else {
     j++;
   }
 
-  document.getElementById("typing").innerText = currentText.substring(0, j);
+  typingEl.innerText = currentText.substring(0, j);
 
-  // pause when full word typed
   if (!isDeleting && j === currentText.length) {
     isDeleting = true;
-    setTimeout(type, 1500); // longer pause
+    setTimeout(type, 1500);
     return;
   }
 
-  // move to next word
   if (isDeleting && j === 0) {
     isDeleting = false;
     i = (i + 1) % texts.length;
-    setTimeout(type, 400); // small delay before next word
+    setTimeout(type, 400);
     return;
   }
 
-  // smoother speed
-  const speed = isDeleting ? 70 : 130;
-  setTimeout(type, speed);
+  setTimeout(type, isDeleting ? 70 : 130);
 }
 
 type();
 
+/* ===== THEME TOGGLE (DARK / LIGHT) ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("themeToggle");
+  const icon = document.getElementById("themeIcon");
 
+  if (!toggle || !icon) return;
 
+  // load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    icon.classList.replace("bx-moon", "bx-sun");
+  }
 
-// for day and ligth view
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 
-const toggle = document.getElementById("themeToggle");
-const icon = document.getElementById("themeIcon");
+    icon.classList.toggle("bx-moon");
+    icon.classList.toggle("bx-sun");
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  icon.classList.toggle("bx-moon");
-  icon.classList.toggle("bx-sun");
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
 });

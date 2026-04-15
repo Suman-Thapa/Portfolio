@@ -1,5 +1,7 @@
 .project-detail {
   padding-top: 90px;
+  background: #ffffff;
+  color: #111;
 }
 
 /* layout */
@@ -8,9 +10,22 @@
   grid-template-columns: 1.3fr 1fr;
   gap: 40px;
   padding: 60px 50px;
+  height: calc(100vh - 90px);
 }
 
+/* LEFT scroll */
+.left {
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 10px;
+}
 
+/* RIGHT fixed */
+.right {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
 
 /* slider */
 .slider {
@@ -21,8 +36,9 @@
   width: 100%;
   height: 420px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 /* arrows */
@@ -30,12 +46,17 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 25px;
-  background: rgba(0,0,0,0.5);
+  font-size: 22px;
+  background: rgba(0,0,0,0.6);
   color: white;
-  padding: 8px 12px;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: #2563eb;
 }
 
 .left-arrow { left: 10px; }
@@ -45,21 +66,13 @@
 .thumbs {
   display: flex;
   gap: 10px;
-  margin-top: 12px;
+  margin: 15px 0 25px;
   overflow-x: auto;
-  margin-bottom: 30px;
-}
-
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .thumbs img {
   width: 100px;
   height: 70px;
-  object-fit: cover;
   border-radius: 8px;
   opacity: 0.6;
   cursor: pointer;
@@ -84,18 +97,25 @@
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;   /* ⭐ ADD THIS */
+  z-index: 9999;
 }
-
 
 .preview.active {
   display: flex;
-  pointer-events: auto;
 }
 
 .preview img {
   max-width: 90%;
   max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
 }
 
 /* right side */
@@ -110,26 +130,28 @@
   line-height: 1.6;
 }
 
-.tech{
+/* tech */
+.tech {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
-
 
 .tech-title {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;
 }
 
 .tech-title i {
-  font-size: 24px;
+  font-size: 22px;
   color: #2563eb;
 }
 
 /* buttons */
 .buttons {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   gap: 15px;
 }
@@ -141,73 +163,89 @@
   gap: 8px;
   text-decoration: none;
   color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
 }
 
 .github { background: #111; }
 .live { background: #2563eb; }
 
-/* responsive */
-@media (max-width: 768px) {
-  .detail-container {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
-  }
-
-  .main-img {
-    height: 250px;
-  }
-}
-
-
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;   /* change to pure white */
-  cursor: pointer;
-  z-index: 10000; /* above everything */
-}
-
-
+/* key feature */
 .key-feature {
-  margin-top: 30px;
-  padding: 20px 25px;
-  background: #f0f7ff; /* light blue */
-  border-radius: 12px;
+  background: #f0f7ff;
   border: 1px solid #dbeafe;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .key-feature h2 {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 22px;
-  color: #1e3a8a; /* dark blue */
-}
-
-.key-feature h2 i {
-  color: #2563eb; /* blue icon */
-  font-size: 24px;
-}
-
-.key-feature ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 12px;
+  font-size: 20px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
 }
 
 .key-feature li {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #334155;
-  font-size: 15px;
 }
 
 .key-feature li i {
-  color: #2563eb; /* blue tick */
-  font-size: 18px;
+  color: #2563eb;
+}
+
+/* 🌙 DARK MODE */
+body.dark .project-detail {
+  background: #0f172a;
+  color: #fff;
+}
+
+body.dark .desc {
+  color: #aaa;
+}
+
+body.dark .main-img {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+body.dark .key-feature {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark .key-feature h2 {
+  color: #4f8cff;
+}
+
+body.dark .key-feature li {
+  color: #ddd;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+    height: auto;
+  }
+
+  .left {
+    overflow: visible;
+  }
+
+  .right {
+    position: static;
+  }
+
+  .main-img {
+    height: 250px;
+  }
 }
