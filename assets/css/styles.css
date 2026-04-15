@@ -779,7 +779,7 @@ img {
 .contact {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0a192f, #0f172a);
+  background: #ffffff;
   color: #fff;
 }
 
@@ -788,13 +788,35 @@ img {
   margin-bottom: 10px;
 }
 
+.contact {
+  color: #111;
+}
+
 .contact h1 span {
-  color: #4f8cff;
+  color: #2563eb;
 }
 
 .contact p {
-  color: #aaa;
+  color: #555;
   margin-bottom: 50px;
+}
+
+
+.contact h1  {
+  color: #2563eb; /* nice blue for white bg */
+}
+
+
+body.dark .contact {
+  color: #fff;
+}
+
+body.dark .contact h1 span {
+  color: #4f8cff;
+}
+
+body.dark .contact p {
+  color: #aaa;
 }
 
 /* grid */
@@ -810,6 +832,16 @@ img {
   }
 }
 
+/* DARK MODE */
+body.dark .contact {
+  background: linear-gradient(135deg, #0a192f, #0f172a);
+  color: #fff;
+}
+
+body.dark .contact p {
+  color: #aaa;
+}
+
 
 
 /* card */
@@ -819,12 +851,20 @@ img {
   gap: 20px;
   padding: 25px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+background: #f8fafc;
+  border: 1px solid #e5e7eb;    /* light border */
+  color: #111;                  /* text black */
   transition: 0.3s;
   cursor: pointer;
 }
 
+.card p {
+  color: #2563eb;
+}
+
+.card i {
+  color: #fff; /* icon stays white inside colored bg */
+}
 /* icon */
 .card i {
   color: #fff;
@@ -838,10 +878,7 @@ img {
   margin: 0;
 }
 
-.card p {
-  margin: 5px 0 0;
-  color: #6fa8ff;
-}
+
 
 /* hover effect */
 .card:hover {
@@ -903,6 +940,15 @@ img {
 }
 
 
+body.dark .card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+body.dark .card p {
+  color: #6fa8ff;
+}
 
 #typing::after {
   content: "|";
@@ -982,6 +1028,9 @@ body.dark .theme-btn {
 }
 
 
+body.dark {
+  color: white;
+}
 
 
 
@@ -998,9 +1047,48 @@ body.dark .nav__toggle i {
 
 /* theme button */
 .theme-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* default (desktop - white navbar) */
+.theme-btn {
   color: #111;
 }
 
+/* mobile menu (dark background) */
+@media screen and (max-width: 767px) {
+  .nav__menu .theme-btn {
+    color: #fff;
+  }
+}
+
+/* dark mode (everywhere) */
 body.dark .theme-btn {
-  color: white;
+  color: #fff;
+}
+
+
+
+
+
+/* mobile menu (dark background) */
+@media screen and (max-width: 767px) {
+  .nav__menu .theme-btn {
+    color: #fff;
+  }
+}
+
+/* dark mode (everywhere) */
+body.dark .theme-btn {
+  color: #fff;
 }
