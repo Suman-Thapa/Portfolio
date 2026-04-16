@@ -513,6 +513,7 @@ body.dark .footer__copy {
 .skills-card {
     background: #fff;
     padding: 20px;
+    margin: 10px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
@@ -868,7 +869,7 @@ body.dark .contact p {
   gap: 20px;
   padding: 25px;
   border-radius: 16px;
-background: #f8fafc;
+  background: #f8fafc;
   border: 1px solid #e5e7eb;    /* light border */
   color: #111;                  /* text black */
   transition: 0.3s;
@@ -877,6 +878,27 @@ background: #f8fafc;
 
 .card p {
   color: #2563eb;
+  margin: 0;
+}
+
+.mostly-active{
+  background-color: #60c736;
+  padding: 10px 20px;
+  margin-left: 50px;
+
+  border-radius: 30px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px){
+  .mostly-active{
+    margin-left: 0;
+    display: block;
+    text-align: center;
+    width: fit-content;
+    padding: 6px;
+    margin: 10px auto; /* center */
+  }
 }
 
 .card i {
@@ -918,6 +940,12 @@ background: #f8fafc;
 
 .card i.bxl-facebook {
   background: linear-gradient(135deg, #1877f2, #3b5998);
+}
+
+
+.card i.bxl-whatsapp {
+  color: #fff; /* WhatsApp green */
+  background: linear-gradient(135deg, #00c853, #009624);
 }
 
 
@@ -1108,4 +1136,8 @@ body.dark .theme-btn {
 /* dark mode (everywhere) */
 body.dark .theme-btn {
   color: #fff;
+}
+
+.l-main{
+  margin: 0 30px;
 }
