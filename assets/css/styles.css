@@ -632,7 +632,7 @@ body.dark .footer__copy {
 
 /* Section */
 .projects {
-  padding: 50px 20px;
+  padding: 50px 10px;
   text-align: center;
 }
 
@@ -1123,6 +1123,9 @@ body.dark .theme-btn {
 }
 
 
+.l-main{
+  margin: 0 30px;
+}
 
 
 
@@ -1131,6 +1134,10 @@ body.dark .theme-btn {
   .nav__menu .theme-btn {
     color: #fff;
   }
+  .l-main{
+  margin: 0 10px;
+}
+
 }
 
 /* dark mode (everywhere) */
@@ -1138,6 +1145,5 @@ body.dark .theme-btn {
   color: #fff;
 }
 
-.l-main{
-  margin: 0 30px;
-}
+
+
