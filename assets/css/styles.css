@@ -910,7 +910,8 @@ body.dark .contact p {
     margin: 10px auto;
     padding: 6px 7px;
     font-size: 14px;
-    
+    display: block;
+    width: max-content;
   }
 }
 
