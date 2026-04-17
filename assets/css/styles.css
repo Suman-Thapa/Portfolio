@@ -909,7 +909,7 @@ body.dark .contact p {
 @media (max-width: 768px){
   .mostly-active{
     margin: 10px auto;
-    padding: 2px 0px;
+    padding: 6px 7px;
     font-size: 14px;
     display: block;
     width: max-content;
