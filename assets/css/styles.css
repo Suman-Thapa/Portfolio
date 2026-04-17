@@ -895,7 +895,6 @@ body.dark .contact p {
   }
 }
 
-/* Mobile responsive */
 .mostly-active{
   background-color: #60c736;
   padding: 10px 30px;
@@ -911,8 +910,7 @@ body.dark .contact p {
     margin: 10px auto;
     padding: 6px 7px;
     font-size: 14px;
-    display: block;
-    width: max-content;
+    
   }
 }
 
