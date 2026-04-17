@@ -88,7 +88,9 @@ img {
   right: 0;
   margin: auto;
   top: 2rem;
-  background-color: var(--first-color);
+}
+.section-title:hover{
+  text-decoration: underline;
 }
 
 .section {
@@ -842,6 +844,7 @@ body.dark .contact p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  margin-top: 50px;
 }
 
 @media (max-width: 768px) {
