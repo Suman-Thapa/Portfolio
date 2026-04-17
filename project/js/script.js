@@ -113,7 +113,7 @@ function startAutoSlide() {
     if (!isVideoPlaying) {
       nextSlide();
     }
-  }, 3000);
+  }, 5000);
 }
 
 // PREVIEW FIX
